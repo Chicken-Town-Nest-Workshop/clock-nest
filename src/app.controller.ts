@@ -9,6 +9,7 @@ export class AppController {
 
   @Get()
   getTownDateTime(): Date {
-    return this.clockService.getDateTime();
+    const date = this.clockService.getDateTime();
+    return date;
   }
 }

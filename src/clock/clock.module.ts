@@ -1,6 +1,5 @@
 import { Global, Module } from '@nestjs/common';
 import { ClockService } from './clock.service';
-import { ClockRepository } from './clock.repository';
 
 @Global()
 @Module({
@@ -8,10 +7,6 @@ import { ClockRepository } from './clock.repository';
         {
             provide: 'ClockServiceInterface',
             useClass: ClockService,
-        },
-        {
-            provide: 'ClockRepositoryInterface',
-            useClass: ClockRepository
         }
     ],
     exports: [

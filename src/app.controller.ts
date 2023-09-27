@@ -1,9 +1,11 @@
-import { Controller, Get } from '@nestjs/common';
-import { ClockService } from './clock/clock.service';
+import { Controller, Get, Inject } from '@nestjs/common';
+import { ClockServiceInterface } from './clock/clock.service.interface';
 
 @Controller()
 export class AppController {
-  constructor(private readonly clockService: ClockService) { }
+  constructor(
+    @Inject('ClockServiceInterface')
+    private readonly clockService: ClockServiceInterface) { }
 
   @Get()
   getTownDateTime(): Date {

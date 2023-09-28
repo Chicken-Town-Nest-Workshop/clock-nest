@@ -8,7 +8,7 @@ export class AppController {
     private readonly clockService: ClockServiceInterface) { }
 
   @Get()
-  getTownDateTime(): Date {
+  getTownDateTime(): string {
     const date = this.clockService.getDateTime();
     return date;
   }
